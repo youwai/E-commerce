@@ -7,8 +7,29 @@
     <title>DreamShop</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+        #logo {
+            font-family: 'Caveat', cursive;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="flex flex-row justify-around items-center h-36">
+            <p id="logo" class="text-6xl text-slate-800 flex-none w-2/5 ml-11">DreamShop</p>
+
+            <div class="w-3/5 flex justify-end">
+                <nav class="space-x-10 mr-20">
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Sign In</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
