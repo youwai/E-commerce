@@ -14,23 +14,43 @@
         p {
             font-family: 'Caveat', cursive;
         }
-    
+
     </style>
 </head>
-<body class="bg-slate-100 w-screen h-screen">
+<body class="bg-slate-100 w-screen h-screen relative">
     <header>
         <div class="flex flex-row justify-around items-center h-36">
             <p class="text-6xl text-slate-800 flex-none w-2/5 ml-11">DreamShop</p>
 
             <div class="w-3/5 flex justify-end">
                 <nav class="space-x-10 mr-20">
-                    <a href="" class="text-slate-800 text-xl">Home</a>
-                    <a href="" class="text-slate-800 text-xl">History</a>
-                    <a href="" class="text-slate-800 text-xl">Sign In</a>
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
+                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Sign In</a>
                 </nav>
             </div>
         </div>
 
     </header>
+    
+    <div class="w-3/5 h-2/4 flex flex-row absolute left-[23rem] top-64 z-[1] drop-shadow-lg">
+        <div class="h-full w-1/2 bg-gray-800 flex justify-center items-center">
+            <p class="text-white text-[5rem]">SIGN IN</p>
+        </div>
+        <div class="h-full w-1/2 bg-gray-50">
+            <form action="#">
+                <div class="flex flex-col items-start w-[75%] mt-24 ml-[13%]">
+                    <span class="ml-3 text-lg font-serif">Member ID</span>
+                    <input type="text" class="w-full mt-2 border-2 h-10 rounded-full pl-5">
+                </div>
+                <div class="flex flex-col items-start w-[75%] mt-8 ml-[13%]">
+                    <span class="ml-3 text-lg font-serif">Password</span>
+                    <input type="password" class="w-full mt-2 border-2 h-10 rounded-full pl-5">
+                </div>
+
+                <button type="submit" class="bg-gray-700 text-white w-[75%] h-14 mt-14 ml-[13%] rounded-full text-lg hover:bg-gray-600 font-serif">Let's Go</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
