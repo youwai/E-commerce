@@ -24,9 +24,9 @@
 
             <div class="w-3/5 flex justify-end">
                 <nav class="space-x-10 mr-20">
-                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
-                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
-                    <a href="" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Sign In</a>
+                    <a href="#" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
+                    <a href="#" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
+                    <a href="#" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Sign In</a>
                 </nav>
             </div>
         </div>
@@ -37,10 +37,10 @@
             <p class="logo text-white text-[5rem]">SIGN IN</p>
         </div>
         <div class="h-full w-1/2 bg-gray-50">
-            <form action="#">
+            <form action="{{ url_for('home') }}" method="post">
                 <div class="flex flex-col items-start w-[75%] mt-24 ml-[13%]">
                     <span class="ml-3 text-lg font-serif">Member ID</span>
-                    <input type="text" required class="w-full mt-2 border-2 h-10 rounded-full pl-5">
+                    <input type="text" name="member_id" required class="w-full mt-2 border-2 h-10 rounded-full pl-5">
                 </div>
                 <div class="flex flex-col items-start w-[75%] mt-8 ml-[13%]">
                     <span class="ml-3 text-lg font-serif">Password</span>
