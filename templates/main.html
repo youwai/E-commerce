@@ -34,8 +34,8 @@
 
             <div class="w-3/5 flex justify-end">
                 <nav class="space-x-10 mr-20">
-                    <a href="#" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
-                    <a href="#" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
+                    <a href="{{ url_for('main') }}" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Home</a>
+                    <a href="{{ url_for('history') }}" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">History</a>
                     <a href="{{ url_for('login') }}" class="text-slate-800 text-xl hover:underline font-semibold hover:underline-offset-4">Sign Out</a>
                 </nav>
             </div>
@@ -44,15 +44,15 @@
 
     <div class="px-20">
         <div class="mt-10 mb-2 flex justify-between">
-            <p class="font-serif text-4xl">Guess what you like</p>
+            <p class="font-serif text-4xl">Guess what you need</p>
             
             <div class="flex flex-row items-end mr-10">
                 <span class="material-symbols-outlined text-2xl">person_filled</span>
-                <p class="font-serif text-2xl ml-3">{{ member_id }}</p>
+                <p class="font-serif text-2xl ml-3">{{ user }}</p>
             </div>
         </div>
 
-        <hr>
+        <hr class="my-4 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
         <div class="mt-7 px-10">
             <div class="w-full flex flex-wrap">
