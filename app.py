@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import data
 
 app = Flask(__name__)
 
@@ -27,4 +28,13 @@ def main():
 
 @app.route('/history')
 def history():
-    return render_template('history.html', user = user)
+    result = data.locate_data(user)
+
+    if result is not None:
+        result1 = result.to_dict('series')
+        amount = len(result1['Order Code'])
+    else:
+        result1 = '-'
+        amount = 0
+
+    return render_template('history.html', user = user, result = result1, amount = amount)

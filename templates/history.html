@@ -59,6 +59,9 @@
                 <thead class="text-xs text-black uppercase bg-gray-200">
                     <tr>
                         <th scope="col" class="py-3 px-6">
+                            Order No.
+                        </th>
+                        <th scope="col" class="py-3 px-6">
                             SKU
                         </th>
                         <th scope="col" class="py-3 px-6">
@@ -67,82 +70,33 @@
                         <th scope="col" class="py-3 px-6">
                             Category
                         </th>
-                        <th scope="col" class="py-3 px-6">
-                            Price
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b">
-                        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-black">
-                            Apple MacBook Pro 17"
-                        </th>
-                        <td class="py-4 px-6">
-                            Sliver
-                        </td>
-                        <td class="py-4 px-6">
-                            Laptop
-                        </td>
-                        <td class="py-4 px-6">
-                            $2999
+                    {% if result == '-' %}
+                    <tr class="odd:bg-white even:bg-gray-50 border-b">
+                        <td colspan="4" class="text-center font-medium py-4 px-6">
+                            You haven't purchase anything yet
                         </td>
                     </tr>
-                    <tr class="bg-gray-50 border-b">
+                    {% else %}
+                    {% for i in range(amount) %}
+                    <tr class="odd:bg-white even:bg-gray-50 border-b">
                         <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-black">
-                            Microsoft Surface Pro
+                            {{ result['Order Code'][i] }}
                         </th>
                         <td class="py-4 px-6">
-                            White
+                            {{ result['SKU'][i] }}
                         </td>
                         <td class="py-4 px-6">
-                            Laptop PC
+                            {{ result['Name'][i] }}
                         </td>
                         <td class="py-4 px-6">
-                            $1999
+                            {{ result['Product Category'][i] }}
                         </td>
                     </tr>
-                    <tr class="bg-white border-b">
-                        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-black">
-                            Magic Mouse 2
-                        </th>
-                        <td class="py-4 px-6">
-                            Black
-                        </td>
-                        <td class="py-4 px-6">
-                            Accessories
-                        </td>
-                        <td class="py-4 px-6">
-                            $99
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-50 border-b">
-                        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-black">
-                            Google Pixel Phone
-                        </th>
-                        <td class="py-4 px-6">
-                            Gray
-                        </td>
-                        <td class="py-4 px-6">
-                            Phone
-                        </td>
-                        <td class="py-4 px-6">
-                            $799
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b">
-                        <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-black">
-                            Apple Watch 5
-                        </th>
-                        <td class="py-4 px-6">
-                            Red
-                        </td>
-                        <td class="py-4 px-6">
-                            Wearables
-                        </td>
-                        <td class="py-4 px-6">
-                            $999
-                        </td>
-                    </tr>
+                    {% endfor %}
+                    {% endif %}
                 </tbody>
             </table>
         </div>
