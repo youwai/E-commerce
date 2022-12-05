@@ -11,6 +11,7 @@ def index():
 
 @app.route('/login')
 def login():
+    global user 
     user = ''
     return render_template('login.html')
 
@@ -24,6 +25,10 @@ def home():
 
 @app.route('/main')
 def main():
+    items = data.pass_recommendation(user)
+
+    print(items)
+
     return render_template('main.html', user = user)
 
 @app.route('/history')
