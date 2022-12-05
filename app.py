@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 user = ''
 
+outcome = None
+
 @app.route('/')
 def index():
     return redirect(url_for('login'))
@@ -13,6 +15,10 @@ def index():
 def login():
     global user 
     user = ''
+
+    global outcome
+    outcome = None
+
     return render_template('login.html')
 
 @app.route('/home', methods = ['POST'])
@@ -25,11 +31,14 @@ def home():
 
 @app.route('/main')
 def main():
-    items = data.pass_recommendation(user)
+    global outcome
+    
+    if outcome is None:
+        items = data.pass_recommendation(user)
 
-    print(items)
+        outcome = items.to_dict('records')
 
-    return render_template('main.html', user = user)
+    return render_template('main.html', user = user, outcome = outcome)
 
 @app.route('/history')
 def history():

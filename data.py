@@ -98,6 +98,6 @@ def pass_recommendation(user):
         result = temp.loc[items['SKU'].tolist()].reset_index()
 
         return result[['SKU', 'Product Category', 'Name']].drop_duplicates()
-        
+
     except:
         return None
