@@ -1,12 +1,20 @@
 import pandas as pd
 
-data = pd.read_excel('/Users/youwai/Desktop/Final Year Project/Dreamshop Master_list (Jan-Jul).xlsx', header=0)
+df = pd.read_csv('./data.csv')
 
 def locate_data(user):
     try:
-        temp = data.set_index('Contact Name')
+        temp = df.set_index('Contact Name')
 
         return temp.loc[[user]][['Order Code', 'SKU', 'Product Category', 'Name']]
+    except:
+        return None
+
+def category_count(user):
+    try:
+        temp = df.set_index('Contact Name')
+
+        return temp.loc[[user]]['Product Category'].value_counts().to_dict()
     except:
         return None
 
@@ -93,7 +101,7 @@ def pass_recommendation(user):
 
         print('Done...')
 
-        temp = data.set_index('SKU')
+        temp = df.set_index('SKU')
 
         result = temp.loc[items['SKU'].tolist()].reset_index()
 

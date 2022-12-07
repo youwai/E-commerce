@@ -36,6 +36,8 @@ def main():
     if outcome is None:
         items = data.pass_recommendation(user)
 
+        print(items)
+
         outcome = items.to_dict('records')
 
     return render_template('main.html', user = user, outcome = outcome)
@@ -44,6 +46,8 @@ def main():
 def history():
     result = data.locate_data(user)
 
+    category_count = data.category_count(user)
+
     if result is not None:
         result1 = result.to_dict('series')
         amount = len(result1['Order Code'])
@@ -51,4 +55,4 @@ def history():
         result1 = '-'
         amount = 0
 
-    return render_template('history.html', user = user, result = result1, amount = amount)
+    return render_template('history.html', user = user, result = result1, amount = amount, category_count = category_count)

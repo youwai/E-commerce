@@ -44,7 +44,7 @@
 
     <div class="px-20">
         <div class="mt-10 mb-2 flex justify-between">
-            <p class="font-serif text-4xl">Purchase History</p>
+            <p class="font-serif text-4xl">Purchase Summary</p>
             
             <div class="flex flex-row items-end mr-10">
                 <span class="material-symbols-outlined text-2xl">person_filled</span>
@@ -54,7 +54,26 @@
 
         <hr class="my-4 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
-        <div class="mt-7 px-10 overflow-x-auto relative shadow-md sm:rounded-lg">
+        <div class="flex overflow-x-auto w-full">
+            {% for category, count in category_count.items() %}
+            <div class="flex h-auto w-auto border border-gray-400 mr-5 mb-5">
+                <div class="bg-gray-900 text-center w-4/5 py-5 px-5 whitespace-no-wrap">
+                    <p class="text-gray-50">{{ category }}</p>
+                </div>
+                <div class="bg-gray-200 text-center w-1/5 py-5">
+                    <p class="text-black text-base">{{ count }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-10 mb-2">
+            <p class="font-serif text-4xl">Purchase History</p>
+        </div>
+
+        <hr class="my-4 h-px bg-gray-200 border-0 dark:bg-gray-700">
+
+        <div class="mt-7 px-10 overflow-x-auto overflow-y-scroll max-h-[40rem] relative shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-black">
                 <thead class="text-xs text-black uppercase bg-gray-200">
                     <tr>
