@@ -54,9 +54,10 @@
 
         <hr class="my-4 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
-        <div class="flex overflow-x-auto w-full">
+        {% if category_count != '-' %}
+        <div class="flex overflow-x-scroll w-full">
             {% for category, count in category_count.items() %}
-            <div class="flex h-auto w-auto border border-gray-400 mr-5 mb-5">
+            <div class="flex h-auto w-[32rem] border border-gray-400 mr-5 mb-5">
                 <div class="bg-gray-900 text-center w-4/5 py-5 px-5 whitespace-no-wrap">
                     <p class="text-gray-50">{{ category }}</p>
                 </div>
@@ -66,6 +67,7 @@
             </div>
             {% endfor %}
         </div>
+        {% endif %}
 
         <div class="mt-10 mb-2">
             <p class="font-serif text-4xl">Purchase History</p>

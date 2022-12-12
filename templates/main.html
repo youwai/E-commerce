@@ -54,9 +54,9 @@
 
         <hr class="my-4 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
+        {% if outcome != '-' %}
         <div class="mt-7 px-10">
             <div class="w-full flex flex-wrap">
-
                 {% for out in outcome %}
                 <div class="h-56 w-[40%] border border-gray-400 mr-5 mb-5 flex">
                     <div class="h-full w-2/5 bg-cover" style="background-image: url('/static/temp.png');"></div>
@@ -71,9 +71,9 @@
                     </div>
                 </div>
                 {% endfor %}
-
             </div>
         </div>
+        {% endif %}
     </div>
 </body>
 </html>

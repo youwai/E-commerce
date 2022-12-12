@@ -38,7 +38,10 @@ def main():
 
         print(items)
 
-        outcome = items.to_dict('records')
+        if items is not None:
+            outcome = items.to_dict('records')
+        else:
+            outcome = '-'
 
     return render_template('main.html', user = user, outcome = outcome)
 
@@ -54,5 +57,6 @@ def history():
     else:
         result1 = '-'
         amount = 0
+        category_count = '-'
 
     return render_template('history.html', user = user, result = result1, amount = amount, category_count = category_count)

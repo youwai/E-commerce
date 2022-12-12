@@ -68,6 +68,11 @@ def recommendation(user):
     df['count'] = 1
     df = df.groupby(['Contact Name', 'SKU']).count()
 
+    try:
+        df.loc[[user]]
+    except:
+        raise Exception("This user don't exist.")
+
     df.reset_index(inplace=True)
 
     matrix = df.pivot_table(index='Contact Name', columns='SKU', values='count')
